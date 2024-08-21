@@ -12,6 +12,7 @@ factory-boy = "^3.3.0"
 Django = "^5.1"
 
 
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
