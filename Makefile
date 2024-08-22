@@ -1,0 +1,1 @@
+CMD: =poetry run
