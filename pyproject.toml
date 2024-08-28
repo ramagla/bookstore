@@ -7,6 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
+asgiref = "^3.8.1"
 django = "^5.1"
 django-rest-framework = "^0.1.0"
 django-extensions = "^3.2.3"
@@ -15,6 +16,16 @@ django-debug-toolbar = "^4.4.6"
 psycopg2 = "^2.9.9"
 flake8 = "^7.1.1"
 gitpython = "^3.1.43"
+Faker = "^27.0.0"
+mccabe = "^0.7.0"
+pycodestyle = "^2.12.1"
+pyflakes = "^3.2.0"
+python-dateutil = "^2.9.0.post0"
+six = "^1.16.0"
+smmap = "^5.0.1"
+sqlparse = "^0.5.1"
+tzdata = "^2024.1"
+
 
 
 [build-system]
