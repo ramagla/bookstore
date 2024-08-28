@@ -1,3 +1,19 @@
+Skip to content
+ 
+Search Gists
+Search...
+All gists
+Back to GitHub
+@drsantos20
+drsantos20/build.yml
+Created last year • Report abuse
+Code
+Revisions
+1
+Clone this repository at &lt;script src=&quot;https://gist.github.com/drsantos20/b84cc0bca9c083208200743bfe356fa7.js&quot;&gt;&lt;/script&gt;
+<script src="https://gist.github.com/drsantos20/b84cc0bca9c083208200743bfe356fa7.js"></script>
+build.yml
+build.yml
 name: Python application
 
 on: [push]
@@ -7,29 +23,46 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [3.12.5]
-        poetry-version: [1.8.3]
+        python-version: [3.8, 3.9]
 
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3  # Atualizado para v3
+    - uses: actions/checkout@v2
 
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4  # Atualizado para v4
-        with:
-          python-version: ${{ matrix.python-version }}
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
 
-      - name: Install poetry ${{ matrix.poetry-version }}
-        run: |
-          python -m ensurepip
-          python -m pip install --upgrade pip
-          python -m pip install poetry==${{ matrix.poetry-version }}
-          poetry --help
+    - name: Install poetry
+      run: |
+        python -m ensurepip
+        python -m pip install --upgrade pip
+        python -m pip install --upgrade poetry
+    - name: View poetry --help
+      run: poetry --help
 
-      - name: Install dependencies
-        shell: bash
-        run: python -m poetry install
+    - name: Install dependencies
+      shell: bash
+      run: python -m poetry install
 
-      - name: Test
-        run: poetry run python manage.py test
+    - name: Test
+      run: |
+        poetry run python manage.py test
+@ramagla
+Comment
+ 
+Leave a comment
+ 
+Footer
+© 2024 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact
+Manage cookies
+Do not share my personal information
