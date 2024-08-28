@@ -26,7 +26,10 @@ SECRET_KEY = "django-insecure-o-&ri#2g+7k@t&o49%d(7c$ju#tym#nyqp0v(xy@=a$v&+c$q(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost','127.0.0.1',
+    'https://ramagla.pythonanywhere.com/'
+]
 
 
 # Application definition
